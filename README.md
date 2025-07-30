@@ -54,7 +54,7 @@ composer show fyyyn1210/wire-select
 
 ```bash
 # Publish config file for customization
-php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\SearchableSelectServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Fyyyn1210\WireSelect\WireSelectServiceProvider" --tag="config"
 
 # This creates: config/wire-select.php
 ```
@@ -63,7 +63,7 @@ php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\Search
 
 ```bash
 # Publish views for custom styling
-php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\SearchableSelectServiceProvider" --tag="views"
+php artisan vendor:publish --provider="Fyyyn1210\WireSelect\WireSelectServiceProvider" --tag="views"
 
 # This creates: resources/views/vendor/wire-select/
 ```
@@ -72,7 +72,7 @@ php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\Search
 
 ```bash
 # Publish CSS/JS assets
-php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\SearchableSelectServiceProvider" --tag="assets"
+php artisan vendor:publish --provider="Fyyyn1210\WireSelect\WireSelectServiceProvider" --tag="assets"
 
 # This creates: public/vendor/wire-select/
 ```
@@ -452,7 +452,7 @@ composer dump-autoload
 ```bash
 # Make sure Bootstrap/your CSS framework is loaded
 # Or publish and customize the views
-php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\SearchableSelectServiceProvider" --tag="views"
+php artisan vendor:publish --provider="Fyyyn1210\WireSelect\WireSelectServiceProvider" --tag="views"
 ```
 
 ### Issue 3: Database Connection Issues
