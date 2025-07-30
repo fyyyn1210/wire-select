@@ -14,8 +14,9 @@ class WireSelectServiceProvider extends ServiceProvider
 
         // Publish views
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/wire-select'),
+            __DIR__.'/../resources/views' => resource_path('views/wire-select'),
         ], 'views');
+
 
         // Load views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'wire-select');
