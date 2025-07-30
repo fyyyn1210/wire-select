@@ -7,14 +7,14 @@
 
 ### Step 1: Install via Composer
 ```bash
-composer require fyyyn1210/livewire-searchable-select
+composer require fyyyn1210/wire-select
 ```
 
 ### Step 2: Use in Your Blade Template
 ```blade
-<livewire:searchable-select-box 
-    table-name="users" 
-    field-name="user_id" 
+<livewire:wire-select-box
+    table-name="users"
+    field-name="user_id"
     label="Select User" />
 ```
 
@@ -36,7 +36,7 @@ composer require fyyyn1210/livewire-searchable-select
 
 ```bash
 # Via Composer (Recommended)
-composer require fyyyn1210/livewire-searchable-select
+composer require fyyyn1210/wire-select
 
 # Clear cache after installation
 php artisan config:clear
@@ -47,7 +47,7 @@ php artisan view:clear
 
 ```bash
 # Check if package is loaded
-composer show fyyyn1210/livewire-searchable-select
+composer show fyyyn1210/wire-select
 ```
 
 ### 3. Publish Configuration (Optional)
@@ -56,7 +56,7 @@ composer show fyyyn1210/livewire-searchable-select
 # Publish config file for customization
 php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\SearchableSelectServiceProvider" --tag="config"
 
-# This creates: config/searchable-select.php
+# This creates: config/wire-select.php
 ```
 
 ### 4. Publish Views (Optional)
@@ -65,7 +65,7 @@ php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\Search
 # Publish views for custom styling
 php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\SearchableSelectServiceProvider" --tag="views"
 
-# This creates: resources/views/vendor/livewire-searchable-select/
+# This creates: resources/views/vendor/wire-select/
 ```
 
 ### 5. Publish Assets (Optional)
@@ -74,7 +74,7 @@ php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\Search
 # Publish CSS/JS assets
 php artisan vendor:publish --provider="Fyyyn1210\LivewireSearchableSelect\SearchableSelectServiceProvider" --tag="assets"
 
-# This creates: public/vendor/livewire-searchable-select/
+# This creates: public/vendor/wire-select/
 ```
 
 ---
@@ -128,7 +128,7 @@ class UserForm extends Component
         $this->validate([
             'user_id' => 'required|exists:users,id'
         ]);
-        
+
         // Save logic here
     }
 
@@ -144,12 +144,12 @@ class UserForm extends Component
 <!-- resources/views/livewire/user-form.blade.php -->
 <div>
     <form wire:submit="save">
-        <livewire:searchable-select-box 
-            table-name="users" 
+        <livewire:wire-select-box
+            table-name="users"
             search-column="name"
             key-column="id"
             value-column="name"
-            field-name="user_id" 
+            field-name="user_id"
             label="Select User"
             placeholder="Type to search users..."
             :required="true" />
@@ -210,7 +210,7 @@ class CategoryForm extends Component
 ```blade
 <!-- resources/views/livewire/category-form.blade.php -->
 <div>
-    <livewire:searchable-select-box
+    <livewire:wire-select-box
         :items="$categories"
         field-name="category"
         label="Select Category"
@@ -254,7 +254,7 @@ class ProductForm extends Component
 ```blade
 <!-- resources/views/livewire/product-form.blade.php -->
 <div>
-    <livewire:searchable-select-box
+    <livewire:wire-select-box
         table-name="products"
         search-column="name"
         key-column="id"
@@ -273,7 +273,7 @@ class ProductForm extends Component
 
 # 🔧 Configuration Options
 
-## Config File (config/searchable-select.php)
+## Config File (config/wire-select.php)
 
 ```php
 <?php
@@ -301,7 +301,7 @@ return [
 ## All Available Props
 
 ```blade
-<livewire:searchable-select-box
+<livewire:wire-select-box
     {{-- Data Source --}}
     :items="$array_data"              <!-- Static array data -->
     table-name="table_name"           <!-- Database table -->
@@ -400,7 +400,7 @@ Route::get('/users/search', function (Request $request) {
     $users = User::where('name', 'like', '%' . $request->q . '%')
                  ->orWhere('email', 'like', '%' . $request->q . '%')
                  ->paginate(30);
-    
+
     return response()->json([
         'items' => $users->items(),
         'total_count' => $users->total()
@@ -412,10 +412,10 @@ Route::get('/users/search', function (Request $request) {
 
 ```blade
 <!-- New Livewire Component - ONE LINE! -->
-<livewire:searchable-select-box 
-    table-name="users" 
+<livewire:wire-select-box
+    table-name="users"
     search-column="name"
-    field-name="user_id" 
+    field-name="user_id"
     label="Select User"
     placeholder="Search for users..." />
 ```
@@ -441,7 +441,7 @@ public function handleUserSelection($data)
 
 ### Issue 1: Component Not Found
 ```bash
-# Error: Component [searchable-select-box] not found
+# Error: Component [wire-select-box] not found
 # Solution: Clear cache
 php artisan config:clear
 php artisan view:clear
@@ -483,9 +483,9 @@ public function handleSelection($data)
 
 ```blade
 <!-- Add debug info to see what's happening -->
-<livewire:searchable-select-box 
-    table-name="users" 
-    field-name="user_id" 
+<livewire:wire-select-box
+    table-name="users"
+    field-name="user_id"
     label="Select User" />
 
 <!-- Debug output -->
@@ -502,4 +502,4 @@ public function handleSelection($data)
 
 Your Livewire Searchable Select is now installed and ready to use. Start with a simple example and gradually explore more advanced features.
 
-**Need help?** Check our [GitHub Issues](https://github.com/fyyyn1210/livewire-searchable-select/issues) or [Discussions](https://github.com/fyyyn1210/livewire-searchable-select/discussions).
+**Need help?** Check our [GitHub Issues](https://github.com/fyyyn1210/wire-select/issues) or [Discussions](https://github.com/fyyyn1210/wire-select/discussions).

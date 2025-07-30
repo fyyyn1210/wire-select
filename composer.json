@@ -1,0 +1,42 @@
+{
+    "name": "fyyyn1210/wire-select",
+    "description": "A powerful searchable select box component for Laravel Livewire with database integration",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "livewire", "select", "searchable", "component","select 2 alternative"],
+    "homepage": "https://github.com/fyyyn1210/wire-select",
+    "authors": [
+        {
+            "name": "fyyyn1210",
+            "homepage": "https://github.com/fyyyn1210"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.0|^11.0",
+        "livewire/livewire": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "orchestra/testbench": "^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fyyyn1210\\WireSelect\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fyyyn1210\\WireSelect\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fyyyn1210\\WireSelect\\WireSelectServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
