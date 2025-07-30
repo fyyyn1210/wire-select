@@ -1,3 +1,6 @@
+# Best Alternative select2 for Livewire
+🚀 The best and most practical alternative to Select2 for Laravel Livewire - Native searchable select component with database integration, no jQuery dependency!
+
 # 🚀 Complete Installation Tutorial
 
 ## Quick Start (2 Minutes Setup)
